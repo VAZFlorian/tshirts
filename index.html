@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main>
+
+        <div id = "tritaille" class = "flex">
+        </div>
+
+        <div id = "tri par couleur" class = "flex">
+        </div>
+
+        <div id="produit" class = "flex">
+            <div class = "toto">
+                <h2>titre</h2>
+                <img src="" alt="tshirtimage">
+                <div class="attribut taille"></div>
+                <div class = "attribut couleur"></div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="Data.js"></script>
+
+    <script>
+
+        const divProduit = document.getElementById('produit')
+
+
+        function Affichage(tableauTshirts) {
+            divProduit.innerHTML = "";
+            for (const tshirt of tableauTshirts) {
+                
+            
+                let html =
+                `
+                <div class = "produit">
+                <h2 class = "nom">${tshirt.nom}</h2>
+                <img src="${tshirt.img}" alt="tshirtimage">
+                <div class="attribut taille">${tshirt.taille}</div>
+                <div class = "attribut couleur">${tshirt.couleur}</div>
+
+            </div>
+            ` ;
+
+            divProduit.innerHTML += html;
+
+            }
+        }
+
+        Affichage(tshirts);
+
+
+
+
+
+        function tritaille() {
+
+
+        var divsize = document.getElementById('tritaille');
+        console.log(divsize);
+        size.forEach(element => {
+            let madiv = document.createElement("button");
+            madiv.innerText += element;
+            madiv.setAttribute('taille', element);
+            
+            madiv.addEventListener('click', function(e) {
+                console.log (e.target.attributes.taille.value);
+                taille = e.target.attributes.taille.value;
+                Affichage(filtreTaille(tshirts, taille)); 
+            }
+            ) ; 
+            
+            divsize.appendChild(madiv);
+            console.log(madiv);
+        });
+        }
+
+      tritaille();
+
+
+      function tricouleur() {
+
+
+var divsize = document.getElementById('tri par couleur');
+console.log(divsize);
+color.forEach(element => {
+    let madiv = document.createElement("button");
+    madiv.innerText += element;
+    madiv.setAttribute('color', element);
+    
+    madiv.addEventListener('click', function(e) {
+        console.log (e.target.attributes.color.value);
+        color = e.target.attributes.color.value;
+        Affichage(filtreCouleur (tshirts, color)); 
+    }
+    ) ; 
+    
+    divsize.appendChild(madiv);
+    console.log(madiv);
+});
+}
+
+tricouleur();
+        
+            
+        
+
+    </script>
+
+</body>
+</html>

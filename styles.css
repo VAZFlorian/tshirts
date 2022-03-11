@@ -1,0 +1,21 @@
+
+
+button {
+    margin:2px;
+    padding:10px;   
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.flex {
+    display: flex;
+}
+
+.produit {
+    border: solid black 2px;
+    margin: 5px;
+    padding : 10px;
+}
